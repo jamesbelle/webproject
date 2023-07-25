@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Put your description here.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="project3.css">
+  <title>Document</title>
+  <style>
+    @media (max-width: 1200px) {
+      #headercontent{
+        flex-direction: column;
+        align-items: center;
+      }
+      #headercontent>div{
+        width: 70%;
+      }
+      #headercontent>img{
+        width: 70%;
+      }
+    }
+
+    @media (max-width: 1094px) {
+
+      #navigation,
+      #loginform {
+        display: none;
+      }
+
+      #footercontent {
+        justify-content: center;
+      }
+
+      #footercontent1 {
+        max-width: 700px;
+        width: 90%;
+        margin: 1rem 0;
+      }
+
+      #footernavcontainer {
+        width: 50%;
+        justify-content: center;
+      }
+
+      .footernav:nth-child(1) {
+        margin-left: 0;
+      }
+
+      #aboutcontentcontainer {
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 95%;
+      }
+
+      .aboutcontent {
+        width: 100%;
+        flex-direction: column-reverse;
+      }
+
+      .aboutcontent:nth-child(1) {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 1188px) {
+      .servicecard {
+        max-width: initial;
+        width: 60%;
+        padding: 3rem;
+      }
+
+      .blogcontentcard {
+        max-width: 650px;
+      }
+
+      .contactelement {
+        max-width: initial;
+        width: 47%;
+      }
+
+      .contactelement:nth-child(3) {
+        width: 100%;
+      }
+
+      #contactelementcontainer {
+        justify-content: space-between;
+        gap: 10px 0;
+      }
+    }
+
+    @media (max-width: 775px) {
+      #footernavcontainer {
+        width: 87%;
+      }
+
+      .footernav {
+        width: 50%;
+        max-width: initial;
+      }
+
+      #footercontent4 {
+        width: 80%;
+        max-width: initial;
+      }
+
+      .servicecard {
+        max-width: initial;
+        width: 75%;
+        padding: 3rem;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .sectionheading {
+        font-size: 8vw;
+      }
+
+      .servicecard {
+        width: 70%;
+        margin: 10px 0;
+        padding: 1.5rem;
+      }
+
+      #contactelementcontainer {
+        flex-wrap: wrap;
+      }
+
+      .contactelement {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .footernav {
+        width: 100%;
+        max-width: initial;
+      }
+
+      #footernavcontainer {
+        min-width: initial;
+        width: 100%;
+      }
+
+      .footernav:nth-child(1) {
+        margin-left: 20px;
+      }
+
+      .footernav {
+        margin: 1rem 0;
+      }
+    }
+
+    @media (max-width: 380px) {
+      #footernavcontainer {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footernav:nth-child(2) {
+        margin-left: 20px;
+      }
+
+      .footernav:nth-child(1) {
+        margin-left: 20px;
+      }
+
+      #headertext>h1 {
+        font-size: 10vw;
+      }
+
+      #headertext>h3 {
+        font-size: 7vw;
+      }
+
+      #logo {
+        font-size: 8vw;
+      }
+    }
+
+    @media (max-width: 280px) {
+      #getstartedcontainer {
+        flex-wrap: wrap;
+      }
+
+      #getstartedcontainer>a {
+        margin: 4px;
+      }
+
+      #heading {
+        padding: 0 15px;
+      }
+
+      .socialscontainer {
+        flex-wrap: wrap;
+      }
+
+      .socials {
+        margin: 5px;
+      }
+    }
+
+    #loginform{
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="headersection">
+    <div id="headercontainer">
+      <!-- <nav id="headingcontainer">
+        <div id="heading">
+          <a href="#" id="logo">Tech<span >Nexus</span></a>
+          <ul id="navigation">
+            <li class="navitem"><a href="#">Home</a></li>
+            <li class="navitem"><a href="#">About</a></li>
+            <li class="navitem"><a href="#">Services</a></li>
+            <li class="navitem"><a href="#">Testimonial</a></li>
+            <li class="navitem"><a href="#">Blog</a></li>
+            <li class="navitem"><a href="#">Contact</a></li>
+          </ul>
+          <div id="loginform">
+            <a href="#" class="LFitem">Log-in</a>
+            <a href="#" class="LFitem">Sign-in</a>
+          </div>
+        </div>
+      </nav> -->
+      <div id="headercontent">
+        <div id="headertext">
+          <h1>Welcome to <span class="ht-style">Tech Nexus</span></h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, ducimus laborum ratione perferendis nulla recusandae harum veniam incidunt accusantium officia doloremque praesentium minus placeat quis eligendi facilis blanditiis, maxime fugit.</p>
+          <div id="getstartedcontainer">
+            <a class="getstartedbuttons">Get Started</a>
+            <a class="getstartedbuttons">Explore now</a>
+          </div>
+        </div>
+        <img id="headerimage" src="./svgs/undraw_team_work_k-80-m.svg" alt="">
+      </div>
+    </div>
+  </header>
+  
+  <section id="aboutsection">
+    <div id="aboutcontainer">
+      <div id="aboutheading">
+        <h1 class="sectionheading">About<div class="sectionstyle"><span>section.</span>
+            <hr>
+          </div>
+        </h1>
+        <p class="sectionsubheading">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto dolore perferendis,
+          illo
+          natus ex beatae!</p>
+      </div>
+      <div id="aboutcontentcontainer">
+        <div class="aboutcontent">
+          <p class="paraheading" id="aboutcontent1heading">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Placeat, eos!</p>
+          <img id="about1image" src="./svgs/undraw_mobile_images_rc-0-q.svg" alt="about section image">
+          <ol id="about1para" class="aboutpara">
+            <p class="paraheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quae quo veniam
+              eligendi, fugiat
+              deserunt?</p>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium doloremque expedita, incidunt
+              recusandae
+              praesentium minus?</li>
+            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium doloremque expedita, incidunt
+              recusandae
+              praesentium minus?</li>
+          </ol>
+        </div>
+
+        <div class="aboutcontent">
+          <div id="about2para" class="aboutpara">
+            <p class="paraheading">Quae, minima, similique sint explicabo tenetur harum , deleniti dolorem culpa modi?
+              Laboriosam consectetur veritatis odio repellendus.</p>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quis porro sed distinctio alias
+              quaerat
+              delectus fuga.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quis porro sed distinctio alias
+              quaerat
+              delectus fuga.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate quis porro sed distinctio alias
+              quaerat
+              delectus fuga.</li>
+          </div>
+          <img id="about2image" src="./svgs/undraw_team_work_k-80-m.svg" alt="about section image">
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="servicesection">
+    <div id="servicecontainer">
+      <div id="serviceheading">
+        <h1 class="sectionheading">Services<div class="sectionstyle"><span>section.</span>
+            <hr>
+          </div>
+        </h1>
+        <p class="sectionsubheading">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla, voluptatibus?</p>
+      </div>
+      <div id="servicecardcontainer">
+        <div class="servicecard">
+          <img src="./svgs/laptop-svgrepo-com.svg" alt="Web Designing">
+          <div class="servicecardtext">
+            <h2>UI & UX Designing</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+        <div class="servicecard">
+          <img src="./svgs/code-svgrepo-com.svg" alt="Tag Icon">
+          <div class="servicecardtext">
+            <h2>Frontend Development</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+        <div class="servicecard">
+          <img src="./svgs/python-svgrepo-com.svg" alt="Python Icon">
+          <div class="servicecardtext">
+            <h2>Python Course</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+        <div class="servicecard">
+          <img src="./svgs/php-elephant-svgrepo-com.svg" alt="PHP Icon">
+          <div class="servicecardtext">
+            <h2>PHP Course</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+        <div class="servicecard">
+          <img src="./svgs/website-ui-web-svgrepo-com.svg" alt="Web Network Icon">
+          <div class="servicecardtext">
+            <h2>Backend Development</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+        <div class="servicecard">
+          <img src="./svgs/java-svgrepo-com.svg" alt="Java Icon">
+          <div class="servicecardtext">
+            <h2>Java Course</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi in neque explicabo consequuntur, placeat
+              recusandae excepturi.</p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonialsection">
+    <div id="testimonialcontainer">
+      <h1 class="sectionheading">Testimonial<div class="sectionstyle"><span>section.</span>
+          <hr>
+        </div>
+      </h1>
+      <p class="sectionsubheading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam, qui.</p>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+
+            <div class="swipertext"><img class="opening-quote" src="./svgs/double-quote-svgrepo-com (1).svg"
+                alt="double quotes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo
+              exercitationem voluptas
+              sed possimus nesciunt.<img class="closing-quote" src="./svgs/double-quote-svgrepo-com.svg"
+                alt="double quotes"></div>
+            <img class="client-image"
+              src="https://plus.unsplash.com/premium_photo-1668196793119-f8fa2ee0d90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80"
+              alt="Client Picture">
+            <h3>Andre Terrell</h3>
+            <span>Client</span>
+          </div>
+          <div class="swiper-slide">
+
+            <div class="swipertext"><img class="opening-quote" src="./svgs/double-quote-svgrepo-com (1).svg"
+                alt="double quotes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo
+              exercitationem voluptas
+              sed possimus nesciunt.<img class="closing-quote" src="./svgs/double-quote-svgrepo-com.svg"
+                alt="double quotes"></div>
+            <img class="client-image"
+              src="https://plus.unsplash.com/premium_photo-1668196793119-f8fa2ee0d90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80"
+              alt="Client Picture">
+            <h3>Edmund Mcgowan</h3>
+            <span>Client</span>
+          </div>
+          <div class="swiper-slide">
+
+            <div class="swipertext"><img class="opening-quote" src="./svgs/double-quote-svgrepo-com (1).svg"
+                alt="double quotes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo
+              exercitationem voluptas
+              sed possimus nesciunt.<img class="closing-quote" src="./svgs/double-quote-svgrepo-com.svg"
+                alt="double quotes"></div>
+            <img class="client-image"
+              src="https://plus.unsplash.com/premium_photo-1668196793119-f8fa2ee0d90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80"
+              alt="Client Picture">
+            <h3>Lewys Gordon</h3>
+            <span>Client</span>
+          </div>
+          <div class="swiper-slide">
+
+            <div class="swipertext"><img class="opening-quote" src="./svgs/double-quote-svgrepo-com (1).svg"
+                alt="double quotes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo
+              exercitationem voluptas
+              sed possimus nesciunt.<img class="closing-quote" src="./svgs/double-quote-svgrepo-com.svg"
+                alt="double quotes"></div>
+            <img class="client-image"
+              src="https://plus.unsplash.com/premium_photo-1668196793119-f8fa2ee0d90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80"
+              alt="Client Picture">
+            <h3>Linda Coffey</h3>
+            <span>Client</span>
+          </div>
+          <div class="swiper-slide">
+
+            <div class="swipertext"><img class="opening-quote" src="./svgs/double-quote-svgrepo-com (1).svg"
+                alt="double quotes">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, nemo
+              exercitationem voluptas
+              sed possimus nesciunt.<img class="closing-quote" src="./svgs/double-quote-svgrepo-com.svg"
+                alt="double quotes"></div>
+            <img class="client-image"
+              src="https://plus.unsplash.com/premium_photo-1668196793119-f8fa2ee0d90a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=821&q=80"
+              alt="Client Picture">
+            <h3>Hannah Cline</h3>
+            <span>Client</span>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <section id="blogsection">
+    <div id="blogcontainer">
+      <h1 class="sectionheading">Blog<div class="sectionstyle"><span>section.</span>
+          <hr>
+        </div>
+      </h1>
+      <p class="sectionsubheading">Check out our recent posts</p>
+      <div id="blogcontentcontainer">
+        <div class="blogcontentcard">
+          <img class="blogimage"
+            src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="blog post 1 thumbnail">
+          <div class="blogpostinfo">
+            <div class="bloguploadinfo">
+              <p>December 21st, 2021</p><a href="#">Admin</a>
+            </div>
+            <h2>Laudantium ex neque quaerat blanditiis.</h2>
+            <p class="blogpara">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, fuga maxime? Cum,
+              facilis fuga? Neque dolore repellendus similique impedit labore.</p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+
+        <div class="blogcontentcard">
+          <img class="blogimage"
+            src="https://images.unsplash.com/photo-1605818245175-a2cdda1e7b0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzZ8fHNvdXJjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="blog post 2 thumbnail">
+          <div class="blogpostinfo">
+            <div class="bloguploadinfo">
+              <p>December 21st, 2021</p><a href="#">Admin</a>
+            </div>
+            <h2>Soluta placeat facilis doloribus fuga.</h2>
+            <p class="blogpara">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, fuga maxime? Cum,
+              facilis fuga? Neque dolore repellendus similique impedit labore.</p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+
+        <div class="blogcontentcard">
+          <img class="blogimage"
+            src="https://images.unsplash.com/photo-1518709911915-712d5fd04677?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+            alt="blog post 3 thumbnail">
+          <div class="blogpostinfo">
+            <div class="bloguploadinfo">
+              <p>December 21st, 2021</p><a href="#">Admin</a>
+            </div>
+            <h2>Culpa error aliquam vitae quia quaerat.</h2>
+            <p class="blogpara">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto, fuga maxime? Cum,
+              facilis fuga? Neque dolore repellendus similique impedit labore.</p>
+            <a href="#">Read more</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <section id="contactsection">
+    <div id="contactcontainer">
+      <h1 class="sectionheading">Contact Us</h1>
+      <p class="sectionsubheading">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, voluptate.</p>
+
+      <div id="contactcontent">
+        <div id="contactelementcontainer">
+          <div class="contactelement">
+            <label for="name">Name</label>
+            <input type="text" name="first-name" placeholder="Your name" required>
+          </div>
+
+
+          <div class="contactelement">
+            <label for="email">Email</label>
+            <input type="text" name="email" placeholder="Your email" required>
+          </div>
+
+          <div class="contactelement">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" placeholder="The subject" required>
+          </div>
+        </div>
+        <div id="contactmessage">
+          <label for="message">Message</label>
+          <textarea name="message" rows="7" style="resize:vertical" placeholder="Type your message"></textarea>
+        </div>
+
+        <p id="contactsubmit">Submit Message</p>
+      </div>
+    </div>
+  </section>
+  <footer id="footersection">
+    <div id="footercontainer">
+      <div id="footercontent">
+        <div id="footercontent1">
+          <h2 class="footerheader">Pixel</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sint repudiandae, quidem
+            blanditiis illo id
+            soluta aperiam a odio iusto!</p>
+          <ul class="socialscontainer">
+            <li class="socials"><a href="#"><img src="./svgs/facebook-alt-svgrepo-com.svg" alt="Facebook Icon"></a></li>
+            <li class="socials"><a href="#"><img src="./svgs/github-fill-svgrepo-com.svg" alt="Github Icon"></a></li>
+            <li class="socials"><a href="#"><img src="./svgs/instagram-svgrepo-com.svg" alt="Instagram Icon"></a></li>
+            <li class="socials"><a href="#"><img src="./svgs/linkedin-linked-in-svgrepo-com.svg"
+                  alt="Linked-in Icon"></a></li>
+          </ul>
+        </div>
+        <div id="footernavcontainer">
+          <div id="footercontent2" class="footernav">
+            <h5 class="footerheader">Navigate</h5>
+            <a href="#">Home</a><a href="#">About</a><a href="#">Services</a><a href="#">Testimonial</a><a
+              href="#">Blog</a><a href="#">Contact us</a>
+          </div>
+          <div id="footercontent3" class="footernav">
+            <h5 class="footerheader">Our Services</h5>
+            <a href="#">UI & UX Desigining</a><a href="#">Frontend Development</a><a href="#">Python Course</a><a
+              href="#">PHP Course</a><a href="#">Backend Development</a><a href="#">Java Course</a>
+          </div>
+        </div>
+        <div id="footercontent4">
+          <h5 class="footerheader">Newsletter</h5>
+          <div id="footerfeed">
+            <input type="text" placeholder="Enter Your Email" id="email">
+            <input type="submit" value="Subscribe" id="subscribe">
+          </div>
+        </div>
+      </div>
+      <div id="footercopyright">© Copyright <strong>Pixel</strong>. All Rights Reserved</div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 30,
+      grabCursor: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        },
+        650: {
+          slidesPerView: 2,
+        },
+        1000: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>
